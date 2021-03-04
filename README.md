@@ -1,4 +1,5 @@
 Design
+-------------
 Started off as me trying to write a log(n) fibonacci function without implementing
 matrix and vector data types. I wouldn't say I was successful there. The code
 still basically does matrix multiplication and it's pretty much unreadable.
@@ -17,8 +18,8 @@ Also note that you can find the first n fibonacci numbers much faster and easier
 The novelty of this program is that it doesn't calculate all previous fibonacci
 numbers to find the n'th one while just using integer addition and multiplication.
 
------------------
 Notes / Pseudocode
+---------------
 
 With matrices, here's the problem:
 given a matrix M, integer k, and a vector I, find M^k I
