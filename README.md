@@ -30,7 +30,7 @@ initialize k, M, i
 while k != 0
     if k&1
         i = Mi
-    m*= m
+    m *= m
     k >>= 1
 ```
 
