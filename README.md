@@ -24,18 +24,28 @@ With matrices, here's the problem:
 given a matrix M, integer k, and a vector I, find M^k I
 
 and here's the log(k) solution:
+
 `initialize k, M, i`
+
 `while k != 0:`
+
 `    if k&1`
+
 `        i = Mi`
+
 `    m*= m`
+
 `    k >>= 1`
 
 Here's that algorithm in this use case:
+
 `M = [1 0] variable names: [m0 m1]`
+
 `    [1 1]                 [m2 m3]`
 
+
 `i = [0] variable names: [i0]`
+
 `    [1]                 [i1]`
 
 `k = input`
@@ -47,18 +57,32 @@ wouldn't be surprised if it was or wasn't optimal.
 
 
 `while k != 0`
+
 `    if k&1`
+
 `        r0 = m0*i0 + m1*i1`
+
 `        i1 = m2*i0 + m3*i1`
+
 `        i0 = r0`
 
+
+
 `    m0\_m3 = m0 + m3`
+
 `    m1m2 = m1*m2`
 
+
+
 `    m0 = m0*m0 + m1m2`
+
 `    m1 *= m0_m3`
+
+
 `    m2 *= m0_m3`
+
 `    m3 = m3*m3 + m1m2`
+
 `    k >>= 1`
 
 
@@ -81,10 +105,15 @@ You can print that using print\_num and free it using free\_num\_ptr.
 Apparently the program spends almost all of its time doing multiply\_add.
 
 gprof:
+
 `export LD_PROFILE=long_fib.o`
+
 `make clean`
+
 `make`
+
 `gprof ./a.out ./gmon.out`
+
 
 I did not include the .clang-format file I used since it's the same exact one
 provided in one of my classes. Don't run `make clean`.
