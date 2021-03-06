@@ -12,7 +12,7 @@ In math, there is a formula for the n'th fibonacci number. I've seen that
 implementation referred to as O(1). But, that relies on floating point numbers and
 does things like floating point exponentiation, so I'm not sure how fast or
 accurate or O(1) it is. This program gives the exact answer if it doesn't
-overflow -- you can adjust the size of the answer if it seems to have.
+overflow -- and you can adjust the size of the answer in bytes if you think it overflowed.
 
 Also note that you can find the first n fibonacci numbers much faster and easier.
 The novelty of this program is that it doesn't calculate all previous fibonacci
@@ -75,7 +75,7 @@ Volume 2, Chapter 4.3 Multiple Precision Arithmetic.
 It was way simpler than I thought it would be, but I guess you do have to do all n
 pairwise additions to add and all n^2 operations to multiply.
 
-The long\_fib is a little different than the pseudocode here to account for the
+long\_fib is a little different than the pseudocode here to account for the
 way the functions in big\_number work. It looks a lot like assembly code, which I
 thought was cool.
 
@@ -96,6 +96,6 @@ gprof ./a.out ./gmon.out
 ```
 
 I did not include the .clang-format file I used since it's the same exact one
-provided in one of my classes. Don't run `make clean`.
+provided in one of my classes. Don't run `make format`.
 
 out.txt has the millionth fibonacci number in hex.
